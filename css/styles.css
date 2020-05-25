@@ -137,6 +137,23 @@
     border-radius: 5px;
   }
 
+  .container .doorBtn {
+    position: absolute;
+    bottom: -13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+
+
   
   .container .btn:hover {
     background-color: black;

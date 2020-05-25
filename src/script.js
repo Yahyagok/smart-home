@@ -9,8 +9,26 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 const content = document.getElementsByClassName('content')[0]
 const innerDoor = document.getElementsByClassName('inner-door')[0]
+// const doorBtn = document.getElementsByClassName('container')[3]
 content.addEventListener('click', function(event){
-    innerDoor.src= "photo/newdoor.jpg"
+
+openDoor()
+    function openDoor(){
+          if (event.target.className == 'doorBtn' &&  event.target.innerHTML === 'Door' ){
+                innerDoor.src= "photo/newdoor.jpg"
+                event.target.innerHTML = "door open"
+          }else if ( event.target.className == 'doorBtn' && event.target.innerHTML === 'door open') { 
+                  innerDoor.src = "photo/bluedoor1.jpg"
+                  event.target.innerHTML = "Door"
+          }
+          
+          
+      
+
+
+            
+    
+   }
 })
 
 
@@ -22,3 +40,11 @@ content.addEventListener('click', function(event){
 });
 
 
+
+// if (event.target.innerHTML === 'open door') {
+           
+//     innerDoor.src = "photo/bluedoor1.jpg"
+//     event.target.innerHTML = "door close"
+//     console.log(event.target.innerHTML)
+    
+//    }
