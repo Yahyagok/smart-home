@@ -8,8 +8,8 @@
 
   .inner-door {
     position: absolute;
-    bottom: 180px;
-    right: 1700px;
+    bottom: 158px;
+    right: 900px;
     width: 120px;
     height: 240px
 
@@ -136,6 +136,7 @@
     cursor: pointer;
     border-radius: 5px;
   }
+
   
   .container .btn:hover {
     background-color: black;

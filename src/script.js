@@ -7,12 +7,10 @@
 // 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-
-
 const content = document.getElementsByClassName('content')[0]
-
-document.addEventListener('click', function(event){
-    
+const innerDoor = document.getElementsByClassName('inner-door')[0]
+content.addEventListener('click', function(event){
+    innerDoor.src= "photo/newdoor.jpg"
 })
 
 
