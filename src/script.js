@@ -23,10 +23,7 @@ content.addEventListener('click', function(event){
                   event.target.innerHTML = "Door"
           }
    }
-
-
     washingMachine()
-
     function washingMachine(){
         if (event.target.className == 'washingBtn' &&  event.target.innerHTML === 'Washing off' ){
               washing.src= "photo/washing machine.gif"
@@ -39,6 +36,21 @@ content.addEventListener('click', function(event){
 
    })
 
+const utility =
+      {
+      home_id: 7,
+      user_id: 7,
+      door: false,
+      temperature: 52,
+      light: false,
+      alarm_system: true
+      }
+      fetch('http://localhost:3000/utilities',{
+            method: "PATCH", 
+            body:JSON.stringify(utility)
+      })
+      .then(r => r.json())
+      .then(json => console.log(json))
 
 
 
