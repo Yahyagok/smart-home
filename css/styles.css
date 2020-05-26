@@ -6,14 +6,7 @@
 
  
 
-  .inner-door {
-    position: absolute;
-    bottom: 158px;
-    right: 900px;
-    width: 120px;
-    height: 240px
 
-  }
 
   .big-home{
     position: relative;
@@ -21,12 +14,44 @@
     left: 0;
   }
 
+  .inner-door {
+    position: absolute;
+    bottom: 158px;
+    right: 1700px;
+    width: 120px;
+    height: 240px
 
+  }
 
-.washing-room img {
-    width: 50%;
-    height: auto;
-}
+   .washing-room{
+    position: relative; 
+     top: 0;
+     left: 0;
+  } 
+
+  .washing {
+    position: absolute;
+    bottom: 560px;
+    right: 740px;
+    width: 570px;
+    height: 800px;
+
+  } 
+
+  .washingBtn {
+    position: absolute;
+    bottom: -13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
 
 
   .smartphone {

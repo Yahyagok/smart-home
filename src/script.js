@@ -10,26 +10,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
 const content = document.getElementsByClassName('content')[0]
 const innerDoor = document.getElementsByClassName('inner-door')[0]
 // const doorBtn = document.getElementsByClassName('container')[3]
+const washing = document.getElementsByClassName('washing')[0]
 content.addEventListener('click', function(event){
 
-openDoor()
+    openDoor()
     function openDoor(){
           if (event.target.className == 'doorBtn' &&  event.target.innerHTML === 'Door' ){
                 innerDoor.src= "photo/newdoor.jpg"
                 event.target.innerHTML = "door open"
-          }else if ( event.target.className == 'doorBtn' && event.target.innerHTML === 'door open') { 
+          }else if (event.target.className == 'doorBtn' && event.target.innerHTML === 'door open') { 
                   innerDoor.src = "photo/bluedoor1.jpg"
                   event.target.innerHTML = "Door"
           }
-          
-          
-      
-
-
-            
-    
    }
-})
+
+
+    washingMachine()
+
+    function washingMachine(){
+        if (event.target.className == 'washingBtn' &&  event.target.innerHTML === 'Washing off' ){
+              washing.src= "photo/washing machine.gif"
+              event.target.innerHTML = "Washing on"
+        }else if (event.target.className == 'washingBtn' && event.target.innerHTML === 'Washing on') { 
+                washing.src = "photo/new machine1.jpg"
+                event.target.innerHTML = "Washing off"
+            }
+        }
+
+   })
+
+
+
+
+
+    
+
 
 
 
