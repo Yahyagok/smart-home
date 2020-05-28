@@ -9,10 +9,13 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 const content = document.getElementsByClassName('content')[0]
 const innerDoor = document.getElementsByClassName('inner-door')[0]
+const garageDoor = document.getElementsByClassName("garage-door")[0]
 
 const doorPhone = document.getElementsByClassName('container')[2]
-
 const doorBtn = doorPhone.getElementsByTagName('button')[0]
+
+const garagePhone = document.getElementsByClassName('container')[3]
+const garageBtn = garagePhone.getElementsByTagName('button')[0]
 
 const washing = document.getElementsByClassName('washing')[0]
 const body = document.getElementsByTagName('body')[0]
@@ -41,6 +44,23 @@ allUtilities()
               body.append(div)
                    })
               }
+              function getUtilities(utilities){
+               utilities.forEach(utility => {
+                 console.log(utility)  
+               const div = document.createElement('div')
+               div.className = "each-utility"
+               garageBtn.dataset.id = utility.id 
+               const li = document.createElement('li')
+               if( utility.garage === false){
+                garageDoor.src = "photo/open_garage.jpg"
+               }else{
+                garageDoor.src = "photo/home.jpg" 
+               }
+               li.innerHTML = utility.door
+               div.append(li)
+               body.append(div)
+                    })
+               }
 
 content.addEventListener('click', function(event){
 
@@ -50,6 +70,7 @@ content.addEventListener('click', function(event){
             const id = 3 
           //   const id = doorBtn.dataset.id
             const li = utility.getElementsByTagName('li')[0]
+            const newLi = utility.getElementsByTagName('li')[1]
             
             let status = li.innerHTML
             if( doorBtn.textContent === "Close Door"){
@@ -62,8 +83,17 @@ content.addEventListener('click', function(event){
                   status = "false"
             }
 
-          
-        
+            let garageStatus = newLi.innerHTML
+            if( garageBtn.textContent === "Close Garage"){
+               garageDoor.src = "photo/home.jpg" 
+               garageBtn.textContent = "Open Garage"
+                garageStatus = "true"
+         }else if(event.target.className === 'garageBtn' ){
+                garageDoor.src = "photo/open_garage.jpg"
+                garageBtn.textContent = "Close Garage"    
+                garageStatus = "false"
+          }
+
               fetch(`http://localhost:3000/utilities/${id}`,{
 
                    method: "PATCH",
@@ -116,6 +146,17 @@ content.addEventListener('click', function(event){
         }
 
    })
+
+   openGarage()
+   function openGarage(){
+      if (event.target.className == 'garage-button' &&  event.target.innerHTML === 'Garage closed'){
+            garageDoor.src= "photo/open_garage.jpg"
+            event.target.innerHTML = "Garage open"
+      }else if (event.target.className == 'garageBtn' && event.target.innerHTML === 'Garage open') { 
+            garageDoor.src = "photo/home.jpg"
+              event.target.innerHTML = "Garage closed"
+          }
+   }
 
    
   
